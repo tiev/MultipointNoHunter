@@ -1,0 +1,62 @@
+﻿<Window x:Class="NOHunterGame.TwoGameWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="TwoGame" WindowStyle="None" WindowState="Maximized" xmlns:NOHunterGame_Classes="clr-namespace:NOHunterGame.Classes" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" xmlns:Microsoft_MultiPoint_MultiPointControls="clr-namespace:Microsoft.MultiPoint.MultiPointControls;assembly=Microsoft.MultiPoint.MultiPointControls">
+	<Window.Resources>
+		<ObjectDataProvider x:Key="NOHunterPlayersDS" ObjectType="{x:Type NOHunterGame_Classes:NOHunterPlayers}" d:IsDataSource="True"/>
+		<DataTemplate x:Key="PlayersTemplate">
+			<StackPanel Orientation="Horizontal">
+				<Image MaxHeight="60" MaxWidth="60" Source="{Binding Path=Avatar}"/>
+				<TextBlock Margin="10,0,0,0" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Text="{Binding Path=Score}" FontFamily="Showcard Gothic"/>
+			</StackPanel>
+		</DataTemplate>
+	</Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/bg.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" Grid.Row="1" Background="#4C16FF00" x:Name="numField1"/>
+        <Grid HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" Background="#4C00FFF9" x:Name="numField2" Grid.Column="2" Grid.Row="1"/>
+        <StackPanel Margin="0,0,0,5" Orientation="Horizontal" x:Name="stackGame1_CurrentNumber" Background="#7FFFFFFF" d:LayoutOverrides="Width, Height" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <TextBlock VerticalAlignment="Center" FontSize="24" FontFamily="Showcard Gothic" TextWrapping="Wrap" FontWeight="Bold" FontStyle="Italic"><Run Text="Fi"/><Run Text="nished :"/></TextBlock>
+            <TextBlock Text="{Binding Path=CurrentNumber, Mode=Default}" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="72" FontWeight="Bold" TextAlignment="Center" Margin="20,0,0,0" FontFamily="Showcard Gothic"/>
+        </StackPanel>
+        <ListBox Margin="2,2,2,2" x:Name="listPlayer" IsSynchronizedWithCurrentItem="True" Grid.Column="1" DataContext="{Binding Mode=OneWay, Source={StaticResource NOHunterPlayersDS}}" ItemTemplate="{DynamicResource PlayersTemplate}" ItemsSource="{Binding Path=Players, Mode=Default}" d:UseSampleData="True" Grid.Row="1" BorderThickness="3,3,3,3" BorderBrush="#FF75090D" />
+        <TextBlock Margin="0,50,0,0" Text="   NOHunter Game   " TextWrapping="Wrap" FontSize="30" FontFamily="Pristina" TextAlignment="Center" FontWeight="Bold" FontStyle="Normal" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="3">
+    		<TextBlock.Background>
+    			<RadialGradientBrush GradientOrigin="0.46,0.493">
+    				<RadialGradientBrush.RelativeTransform>
+    					<TransformGroup>
+    						<ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.785" ScaleY="2.519"/>
+    						<SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+    						<RotateTransform Angle="0" CenterX="0.5" CenterY="0.5"/>
+    						<TranslateTransform X="0" Y="0"/>
+    					</TransformGroup>
+    				</RadialGradientBrush.RelativeTransform>
+    				<GradientStop Color="#CC071BF2" Offset="0"/>
+    				<GradientStop Color="#7FFFFFFF" Offset="1"/>
+    			</RadialGradientBrush>
+    		</TextBlock.Background>
+    		<TextBlock.Foreground>
+    			<LinearGradientBrush EndPoint="0.497,1.177" StartPoint="0.5,0">
+    				<GradientStop Color="#FFA12B2B" Offset="0"/>
+    				<GradientStop Color="#FFFFFFFF" Offset="1"/>
+    			</LinearGradientBrush>
+    		</TextBlock.Foreground>
+        </TextBlock>
+        <StackPanel Margin="0,0,0,5" Orientation="Horizontal" x:Name="stackGame2_CurrentNumber" Background="#7FFFFFFF" d:LayoutOverrides="Width, Height" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+        	<TextBlock VerticalAlignment="Center" FontSize="24" FontFamily="Showcard Gothic" TextWrapping="Wrap" FontWeight="Bold" FontStyle="Italic"><Run Text="Fi"/><Run Text="nished :"/></TextBlock>
+        	<TextBlock Text="{Binding Path=CurrentNumber, Mode=Default}" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="72" FontWeight="Bold" TextAlignment="Center" Margin="20,0,0,0" FontFamily="Showcard Gothic"/>
+        </StackPanel>
+    	<Microsoft_MultiPoint_MultiPointControls:MultiPointButton Margin="0,8,0,0" VerticalAlignment="Top" Height="30" Content="Exit" Grid.Column="1" Style="{DynamicResource GlassButton}" Width="70" Background="#FFFF0000" MultiPointClick="ExitGame" Visibility="Visible" x:Name="btnExit" MultiPointMouseEnterEvent="btnExit_MultiPointMouseEnterEvent" MultiPointMouseLeaveEvent="btnExit_MultiPointMouseLeaveEvent"/>
+    </Grid>
+</Window>

@@ -1,0 +1,121 @@
+﻿<Application x:Class="NOHunterGame.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="StartGame.xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <Application.Resources>
+         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/GlassButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+         	<Style x:Key="ButtonStartStyle" TargetType="{x:Type Button}">
+         		<Setter Property="BorderThickness" Value="1"/>
+         		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+         		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+         		<Setter Property="VerticalContentAlignment" Value="Center"/>
+         		<Setter Property="Padding" Value="1"/>
+         		<Setter Property="Template">
+         			<Setter.Value>
+         				<ControlTemplate TargetType="{x:Type Button}">
+         					<ControlTemplate.Resources>
+         						<Storyboard x:Key="OnLoaded" AutoReverse="True" RepeatBehavior="Forever">
+         							<PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="lightning" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.StartPoint)">
+         								<SplinePointKeyFrame KeyTime="00:00:00" Value="0.491,0.473"/>
+         								<SplinePointKeyFrame KeyTime="00:00:01" Value="-0.503,-0.465"/>
+         							</PointAnimationUsingKeyFrames>
+         							<PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="lightning" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.EndPoint)">
+         								<SplinePointKeyFrame KeyTime="00:00:00" Value="1.491,1.47"/>
+         								<SplinePointKeyFrame KeyTime="00:00:01" Value="0.497,0.532"/>
+         							</PointAnimationUsingKeyFrames>
+         							<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="lightning" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+         								<SplineColorKeyFrame KeyTime="00:00:00" Value="#00FFFFFF"/>
+         								<SplineColorKeyFrame KeyTime="00:00:01" Value="#00000000"/>
+         							</ColorAnimationUsingKeyFrames>
+         							<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="lightning" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+         								<SplineColorKeyFrame KeyTime="00:00:00" Value="#00FFFFFF"/>
+         								<SplineColorKeyFrame KeyTime="00:00:01" Value="#00000000"/>
+         							</ColorAnimationUsingKeyFrames>
+         							<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="deep" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)">
+         								<SplineColorKeyFrame KeyTime="00:00:00" Value="#00FFFFFF"/>
+         							</ColorAnimationUsingKeyFrames>
+         						</Storyboard>
+         						<Storyboard x:Key="OnMouseEnter1" RepeatBehavior="Forever">
+         							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="lightning" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+         								<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+         								<SplineDoubleKeyFrame KeyTime="00:00:03" Value="0"/>
+         							</DoubleAnimationUsingKeyFrames>
+         							<PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="lightning" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.EndPoint)">
+         								<SplinePointKeyFrame KeyTime="00:00:00" Value="1.002,1.003"/>
+         								<SplinePointKeyFrame KeyTime="00:00:00.5000000" Value="0.436,1.244"/>
+         								<SplinePointKeyFrame KeyTime="00:00:01" Value="-0.068,0.532"/>
+         								<SplinePointKeyFrame KeyTime="00:00:01.5000000" Value="0.003,0.023"/>
+         								<SplinePointKeyFrame KeyTime="00:00:02" Value="0.54,-0.187"/>
+         								<SplinePointKeyFrame KeyTime="00:00:02.5000000" Value="1.035,0.163"/>
+         								<SplinePointKeyFrame KeyTime="00:00:03" Value="1.002,1.003"/>
+         							</PointAnimationUsingKeyFrames>
+         							<PointAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="lightning" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.StartPoint)">
+         								<SplinePointKeyFrame KeyTime="00:00:00" Value="0.002,0.006"/>
+         								<SplinePointKeyFrame KeyTime="00:00:00.5000000" Value="0.568,-0.235"/>
+         								<SplinePointKeyFrame KeyTime="00:00:01" Value="1.072,0.477"/>
+         								<SplinePointKeyFrame KeyTime="00:00:01.5000000" Value="1.001,0.986"/>
+         								<SplinePointKeyFrame KeyTime="00:00:02" Value="0.464,1.196"/>
+         								<SplinePointKeyFrame KeyTime="00:00:02.5000000" Value="-0.031,0.846"/>
+         								<SplinePointKeyFrame KeyTime="00:00:03" Value="0.002,0.006"/>
+         							</PointAnimationUsingKeyFrames>
+         							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="lightning" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+         								<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.267"/>
+         								<SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+         							</DoubleAnimationUsingKeyFrames>
+         							<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="deep" Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)">
+         								<SplineColorKeyFrame KeyTime="00:00:00.1000000" Value="#FFFFFFFF"/>
+         							</ColorAnimationUsingKeyFrames>
+         							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="deep" Storyboard.TargetProperty="(Shape.StrokeThickness)">
+         								<SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+         							</DoubleAnimationUsingKeyFrames>
+         						</Storyboard>
+         					</ControlTemplate.Resources>
+         					<Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Opacity="{TemplateBinding Opacity}" Visibility="{TemplateBinding Visibility}" Cursor="{TemplateBinding Cursor}" IsEnabled="{TemplateBinding IsEnabled}" ToolTip="{TemplateBinding ToolTip}" RenderTransform="{TemplateBinding RenderTransform}" LayoutTransform="{TemplateBinding LayoutTransform}">
+         						<Rectangle Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" RadiusX="3" RadiusY="3" StrokeThickness="2"/>
+         						<Rectangle x:Name="deep" RadiusX="1" RadiusY="1" Margin="2,2,2,2" StrokeThickness="2" StrokeDashCap="Round" StrokeEndLineCap="Round" StrokeStartLineCap="Round" Stroke="#FF000000"/>
+         						<Rectangle RadiusX="3" RadiusY="3" x:Name="lightning" RenderTransformOrigin="0.5,0.5">
+         							<Rectangle.RenderTransform>
+         								<TransformGroup>
+         									<ScaleTransform ScaleX="1" ScaleY="1"/>
+         									<SkewTransform AngleX="0" AngleY="0"/>
+         									<RotateTransform Angle="0"/>
+         									<TranslateTransform X="0" Y="0"/>
+         								</TransformGroup>
+         							</Rectangle.RenderTransform>
+         							<Rectangle.Fill>
+         								<LinearGradientBrush EndPoint="1.002,1.003" StartPoint="0.002,0.006">
+         									<GradientStop Color="#00000000" Offset="0"/>
+         									<GradientStop Color="#FFFFFFFF" Offset="0.518"/>
+         									<GradientStop Color="#00000000" Offset="1"/>
+         								</LinearGradientBrush>
+         							</Rectangle.Fill>
+         						</Rectangle>
+         						<ContentPresenter Margin="2,0,2,0" OpacityMask="{TemplateBinding OpacityMask}" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+         					</Grid>
+         					<ControlTemplate.Triggers>
+         						<EventTrigger RoutedEvent="FocusManager.GotFocus">
+         							<BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}" x:Name="OnMouseEnter1_BeginStoryboard"/>
+         						</EventTrigger>
+         						<EventTrigger RoutedEvent="FocusManager.LostFocus">
+         							<BeginStoryboard Storyboard="{StaticResource OnLoaded}"/>
+         						</EventTrigger>
+         						<EventTrigger RoutedEvent="Mouse.MouseLeave">
+         							<BeginStoryboard x:Name="OnLoaded_BeginStoryboard2" Storyboard="{StaticResource OnLoaded}"/>
+         						</EventTrigger>
+         						<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+         							<BeginStoryboard Storyboard="{StaticResource OnLoaded}" x:Name="OnLoaded_BeginStoryboard"/>
+         						</EventTrigger>
+         						<EventTrigger RoutedEvent="Mouse.MouseEnter">
+         							<BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}" x:Name="OnLoaded_BeginStoryboard1"/>
+         						</EventTrigger>
+         					</ControlTemplate.Triggers>
+         				</ControlTemplate>
+         			</Setter.Value>
+         		</Setter>
+         	</Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

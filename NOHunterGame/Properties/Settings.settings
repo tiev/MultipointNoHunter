@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NOHunterGame.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BACKGROUND_MUSIC" Type="System.String" Scope="User">
+      <Value Profile="(Default)">main.mp3</Value>
+    </Setting>
+    <Setting Name="BUTTON_WRONG_SOUND" Type="System.String" Scope="User">
+      <Value Profile="(Default)">wrong_choice.wav</Value>
+    </Setting>
+    <Setting Name="BUTTON_RIGHT_SOUND" Type="System.String" Scope="User">
+      <Value Profile="(Default)">right_choice.wav</Value>
+    </Setting>
+    <Setting Name="BUTTON_MOUSE_ENTER_SOUND" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BUTTON_MOUSE_LEAVE_SOUND" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BUTTON_APPEAR_SOUND" Type="System.String" Scope="User">
+      <Value Profile="(Default)">appear.wav</Value>
+    </Setting>
+    <Setting Name="START_SOUND" Type="System.String" Scope="User">
+      <Value Profile="(Default)">go.wav</Value>
+    </Setting>
+    <Setting Name="FINISHED_SOUND" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
